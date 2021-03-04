@@ -8,64 +8,69 @@
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
-    <form>
-        <fieldset name="personal_info" class="fieldset">
-            <legend>Your Information:</legend> 
-            <div class="formline"> First Name <input type="text" name="firstname"></div>
-            <div class="formline"> Last Name <input type="text" name="lasttname"></div>
-            <div class="formline"> adressLine1 <input type="text" name="adressLine1"></div>
-            <div class="formline"> adressLine2 <input type="text" name="adressLine2"></div>
-            <div class="formline"> Zip/Postal Code <input type="text" name="ZipCode"></div>
-        </fieldset> 
 
-        <fieldset name="personal_info" class="fieldset">
-            <legend>Client Information:</legend> 
-            <div class="formline"> First Name <input type="text" name="firstname"></div>
-            <div class="formline"> Last Name <input type="text" name="lasttname"></div>
-            <div class="formline"> adressLine1 <input type="text" name="adressLine1"></div>
-            <div class="formline"> adressLine2 <input type="text" name="adressLine2"></div>
-            <div class="formline"> Zip/Postal Code <input type="text" name="ZipCode"></div>
-        </fieldset> 
-
-        <fieldset name="New Item" class="fieldset">
-            <legend>Add Item</legend> 
-            <div class="formline"> Item Name <input type="text" name="firstname"></div>
-            <div class="formline"> Quantity <input type="text" name="lasttname"></div>
-            <div class="formline"> Rate <input type="text" name="adressLine1"></div>
-            <button class="addItem">Add Item</button>
-        </fieldset> 
-        
-        <div class="tableclass">
-          <table>
-            <tr>
-              <th>Item name</th>
-              <th>Amount</th>
-              <th>Rate</th>
-              <th>Item Total</th>
-            </tr>
-            <tr>
-              <td>Filming</td>
-              <td>4</td>
-              <td>£19.99</td>
-              <td>£99.96</td>
-            </tr>
-            <tr>
-              <td>Editing</td>
-              <td>4</td>
-              <td>£15.00</td>
-              <td>£60.00</td>
-            </tr>
-            <tr>
-              <td>Total:  </td>
-              <td></td>
-              <td></td>
-              <td>£159.96</td>
-            </tr>
-          </table>
-          <button class="exportButton">Download PDF</button>  
-
-      </div>
-
-</body>
+  <form method="POST">
+      <fieldset name="personal_info" class="fieldset">
+          <legend>Your Information:</legend> 
+          <div class="formline"> First Name <input type="text" name="firstname"></div>
+          <div class="formline"> Last Name <input type="text" name="lasttname"></div>
+          <div class="formline"> adressLine1 <input type="text" name="adressLine1"></div>
+          <div class="formline"> adressLine2 <input type="text" name="adressLine2"></div>
+          <div class="formline"> Zip/Postal Code <input type="text" name="ZipCode"></div>
+      </fieldset> 
+  
+      <fieldset name="personal_info" class="fieldset">
+          <legend>Client Information:</legend> 
+          <div class="formline"> First Name <input type="text" name="firstname"></div>
+          <div class="formline"> Last Name <input type="text" name="lasttname"></div>
+          <div class="formline"> adressLine1 <input type="text" name="adressLine1"></div>
+          <div class="formline"> adressLine2 <input type="text" name="adressLine2"></div>
+          <div class="formline"> Zip/Postal Code <input type="text" name="ZipCode"></div>
+      </fieldset> 
+  
+  
+      <fieldset name="New Item" class="fieldset">
+          <legend>Add Item</legend> 
+          <div class="formline"> Item Name <input type="text" name="content"></div>
+          <div class="formline"> Quantity <input type="text" name="lasttname"></div>
+          <div class="formline"> Rate <input type="text" name="adressLine1"></div>
+          <button class="addItem">Add Item</button>
+      </fieldset> 
+  </form>
+  
+  <div class="tableclass">
+  
+      <table>
+          <tr>
+          <th>Item name</th>
+          <th>Amount</th>
+          <th>Rate</th>
+          <th>Item Total</th>
+          </tr>
+          <tr>
+          <td>Filming</td>
+          <td>4</td>
+          <td>£19.99</td>
+          <td>£99.96</td>
+          </tr>
+          <tr>
+          <td>Editing</td>
+          <td>4</td>
+          <td>£15.00</td>
+          <td>£60.00</td>
+          </tr>
+          <tr>
+          <td>Total:  </td>
+          <td></td>
+          <td></td>
+          <td>£159.96</td>
+          </tr>
+      </table>
+  
+      <button class="exportButton">Download PDF</button>  
+  
+  </div>
+  
+  </body>
 
 </html>
