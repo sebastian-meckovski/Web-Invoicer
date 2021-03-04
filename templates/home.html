@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
     <form>
@@ -34,42 +34,38 @@
             <div class="formline"> Rate <input type="text" name="adressLine1"></div>
             <button class="addItem">Add Item</button>
         </fieldset> 
+        
+        <div class="tableclass">
+          <table>
+            <tr>
+              <th>Item name</th>
+              <th>Amount</th>
+              <th>Rate</th>
+              <th>Item Total</th>
+            </tr>
+            <tr>
+              <td>Filming</td>
+              <td>4</td>
+              <td>£19.99</td>
+              <td>£99.96</td>
+            </tr>
+            <tr>
+              <td>Editing</td>
+              <td>4</td>
+              <td>£15.00</td>
+              <td>£60.00</td>
+            </tr>
+            <tr>
+              <td>Total:  </td>
+              <td></td>
+              <td></td>
+              <td>£159.96</td>
+            </tr>
+          </table>
+          <button class="exportButton">Download PDF</button>  
 
-        <table>
-          <tr>
-            <th>Company</th>
-            <th>Contact</th>
-            <th>Country</th>
-          </tr>
-          <tr>
-            <td>Alfreds Futterkiste</td>
-            <td>Maria Anders</td>
-            <td>Germany</td>
-          </tr>
-          <tr>
-            <td>Centro comercial Moctezuma</td>
-            <td>Francisco Chang</td>
-            <td>Mexico</td>
-          </tr>
-          <tr>
-            <td>Ernst Handel</td>
-            <td>Roland Mendel</td>
-            <td>Austria</td>
-          </tr>
-          <tr>
-            <td>Island Trading</td>
-            <td>Helen Bennett</td>
-            <td>UK</td>
-          </tr>
-          <tr>
-            <td>Laughing Bacchus Winecellars</td>
-            <td>Yoshi Tannamuri</td>
-            <td>Canada</td>
-          </tr>
-          <tr>
-            <td>Magazzini Alimentari Riuniti</td>
-            <td>Giovanni Rovelli</td>
-            <td>Italy</td>
-          </tr>
-        </table>
+      </div>
+
+</body>
+
 </html>
