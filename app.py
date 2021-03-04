@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file, redirect
 from invoicingCopy2 import run_stuff
 from SampleData import sample_list
 
@@ -43,10 +43,12 @@ def home():
       
        run_stuff(sample_list, full_name=full_name, adress_line=adress_line)
 
-
-
     return render_template("home.html")
 
+@app.route('/download')
+def download_file():
+      p = "Example Invoice.pdf"
+      return send_file(p, as_attachment=True)
 
 
 if __name__ == '__main__':
