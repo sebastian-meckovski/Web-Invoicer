@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, send_file, redirect
-from invoicingCopy2 import run_stuff
+from invoicingCopy2 import export_PDF
 from SampleData import sample_list
 
 app = Flask(__name__)
@@ -41,7 +41,7 @@ def home():
              "Qantity:", quantity, "\n",
              "Rate:", rate, "\n")
       
-       run_stuff(sample_list, full_name=full_name, adress_line=adress_line)
+       export_PDF(sample_list, full_name=full_name, adress_line=adress_line)
 
     return render_template("home.html")
 

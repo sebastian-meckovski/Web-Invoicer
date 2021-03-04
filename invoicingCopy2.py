@@ -17,7 +17,7 @@ space = 14
 
 document = canvas.Canvas("Example Invoice.pdf", pagesize=A4)
 
-def run_stuff(list_of_items, full_name='Sebastian', adress_line='19 Gresham Street',
+def export_PDF(list_of_items, full_name='Sebastian', adress_line='19 Gresham Street',
               items_per_page=13):
 
     document.setLineWidth(5)
