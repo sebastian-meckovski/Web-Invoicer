@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_file, redirect
+from flask import Flask, render_template, request, send_file, redirect, url_for
 from invoicingCopy2 import export_PDF
 from SampleData import sample_list
 
@@ -42,6 +42,11 @@ def home():
              "Rate:", rate, "\n")
       
        export_PDF(sample_list, full_name=full_name, adress_line=adress_line)
+
+       @app.route("/")                       #redirect doesn't happen. What am I missing?
+       def starting_url():
+            return redirect("/download") 
+       
 
     return render_template("home.html")
 
