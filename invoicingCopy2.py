@@ -15,10 +15,12 @@ y = A4[1] - 135
 x = A4[0]
 space = 14
 
-document = canvas.Canvas("Example Invoice.pdf", pagesize=A4)
 
-def export_PDF(list_of_items, full_name='Sebastian', adress_line='19 Gresham Street',
-              items_per_page=13):
+def export_PDF(list_of_items, full_name=None, adress_line=None,
+               city=None, country=None, zip_postal=None,
+               items_per_page=13):
+    
+    document = canvas.Canvas("Example Invoice.pdf", pagesize=A4)
 
     document.setLineWidth(5)
     document.setStrokeColor(lightsalmon)
@@ -31,9 +33,9 @@ def export_PDF(list_of_items, full_name='Sebastian', adress_line='19 Gresham Str
     document.drawString(50, y, full_name)
     document.setFont("Helvetica", 11)
     document.drawString(50, y - space, adress_line)
-    document.drawString(50, y - space * 2, Adress_Line_2)
-    document.drawString(50, y - space * 3, Adress_Line_3)
-    document.drawString(50, y - space * 4, Adress_Line_4)
+    document.drawString(50, y - space * 2, city)
+    document.drawString(50, y - space * 3, country)
+    document.drawString(50, y - space * 4, zip_postal)
 
     document.drawRightString(x - 50, y - space * 9, "Prepared date")
     document.drawRightString(x - 50, y - space * 10, date_data)
@@ -51,7 +53,7 @@ def export_PDF(list_of_items, full_name='Sebastian', adress_line='19 Gresham Str
 
     list_of_items = list_of_items
 
-    print("SAMPLE DATA:", list_of_items)
+    # print("SAMPLE DATA:", list_of_items)
 
     list_of_items = [
         i + [i[2] * i[3]] for i in list_of_items
@@ -72,7 +74,7 @@ def export_PDF(list_of_items, full_name='Sebastian', adress_line='19 Gresham Str
     ])
 
 
-    print(list_of_items)
+    # print(list_of_items)
 
     t = Table(list_of_items[0], 5 * [1.4 * inch], len(list_of_items[0]) * [0.5 * inch])
 
