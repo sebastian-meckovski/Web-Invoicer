@@ -1,12 +1,14 @@
 from flask import Flask, render_template, request, send_file, redirect, url_for
 from invoicingCopy2 import export_PDF
-from SampleData import sample_list
+import SampleData
+
 
 app = Flask(__name__)
 
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
+
     if request.method == "POST":
        full_name = request.form.get("firstname")
        adress_line = request.form.get("lasttname")
@@ -23,6 +25,9 @@ def home():
        item_name = request.form.get("item_name")
        quantity = request.form.get("qty")
        rate = request.form.get("rate")
+
+       sample_list = [[item_name, 5, 5]]
+
 
        print("Name:", full_name, "\n",
              "lasttname:", adress_line, "\n",
@@ -43,10 +48,8 @@ def home():
       
        export_PDF(sample_list, full_name=full_name, adress_line=adress_line)
 
-       @app.route("/")                       #redirect doesn't happen. What am I missing?
-       def starting_url():
-            return redirect("/download") 
-       
+
+       return redirect("/download")
 
     return render_template("home.html")
 
@@ -54,7 +57,6 @@ def home():
 def download_file():
       p = "Example Invoice.pdf"
       return send_file(p, as_attachment=True)
-
 
 if __name__ == '__main__':
     app.run()

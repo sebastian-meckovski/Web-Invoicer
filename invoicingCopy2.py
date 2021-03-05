@@ -49,6 +49,10 @@ def export_PDF(list_of_items, full_name='Sebastian', adress_line='19 Gresham Str
 
     [i.insert(1, '') for i in list_of_items]
 
+    list_of_items = list_of_items
+
+    print("SAMPLE DATA:", list_of_items)
+
     list_of_items = [
         i + [i[2] * i[3]] for i in list_of_items
     ]
@@ -66,6 +70,7 @@ def export_PDF(list_of_items, full_name='Sebastian', adress_line='19 Gresham Str
     list_of_items[-1].append([
         'TOTAL: ' + str(total)
     ])
+
 
     print(list_of_items)
 
@@ -130,6 +135,8 @@ def export_PDF(list_of_items, full_name='Sebastian', adress_line='19 Gresham Str
     document.drawCentredString(x / 2, y - space * 47, "Sort Code: 11-22-33")
     document.drawCentredString(x / 2, y - space * 48, "Account Number: 12345789")
     document.drawCentredString(x / 2, y - space * 49, "Name: Mack Sebastian")
+    
+    SampleData = None
 
     document.save()
 
