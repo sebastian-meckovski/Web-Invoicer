@@ -6,21 +6,6 @@ import time
 
 app = Flask(__name__)
 
-
-def openurl():
-    url = 'https://seb-invoicer.herokuapp.com/'
-    print('opening URL')
-    urllib2.urlopen(url)
-    print('URL loaded')
-
-
-def reload(period=1200):
-    """Load URL every 'period' seconds"""
-    while True:
-        openurl()
-        time.sleep(period)
-
-
 @app.route("/", methods=['GET', 'POST'])
 def home():
 
@@ -69,6 +54,18 @@ def download_file():
     p = "Invoice.pdf"
     return send_file(p, as_attachment=True)
 
+def openurl():
+    url = 'https://seb-invoicer.herokuapp.com/'
+    print('opening URL')
+    urllib2.urlopen(url)
+    print('URL loaded')
+
+
+def reload(period=1200):
+    """Load URL every 'period' seconds"""
+    while True:
+        openurl()
+        time.sleep(period)
 
 executor = ThreadPoolExecutor(max_workers=1)
 executor.submit(reload)
