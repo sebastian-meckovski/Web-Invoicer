@@ -5,9 +5,6 @@ from reportlab.lib import colors
 from reportlab.platypus import Table, TableStyle
 from reportlab.lib.pagesizes import A4
 import datetime
-from SampleData import sample_list
-from invoice_values import Name, Adress_Line_1, Adress_Line_2, Adress_Line_3, Adress_Line_4, client_name,\
-    client_adress_line_1, client_adress_line_2, client_adress_line_3, client_adress_line_4
 
 date_data = datetime.datetime.now().strftime("%Y-%m-%d")
 
@@ -27,6 +24,7 @@ def export_PDF(list_of_items,
                city_client=None,
                country_client=None,
                zip_postal_client=None,
+               sample_list=[[None, 0, 0]],
                items_per_page=13):
     
     document = canvas.Canvas("Example Invoice.pdf", pagesize=A4)

@@ -1,7 +1,5 @@
 from flask import Flask, render_template, request, send_file, redirect, url_for
-from invoicingCopy2 import export_PDF
-import SampleData
-
+from exportPDF_function import export_PDF
 
 app = Flask(__name__)
 
@@ -29,6 +27,8 @@ def home():
 
        sample_list = [[item_name, float(quantity), float(rate)]]
       
+       print("sample LIST:", sample_list)
+
        export_PDF(sample_list,
                   full_name=full_name, 
                   adress_line=adress_line,
@@ -49,7 +49,7 @@ def home():
 
 @app.route('/download')
 def download_file():
-      p = "Example Invoice.pdf"
+      p = "Invoice.pdf"
       return send_file(p, as_attachment=True)
 
 if __name__ == '__main__':
