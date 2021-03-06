@@ -63,7 +63,7 @@ def openurl():
     print('URL loaded')
 
 
-def reload(period=5):
+def reload(period=1200):
     """Load URL every 'period' seconds"""
     while True:
         openurl()
