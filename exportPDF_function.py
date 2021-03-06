@@ -27,7 +27,7 @@ def export_PDF(list_of_items,
                sample_list=[[None, 0, 0]],
                items_per_page=13):
     
-    document = canvas.Canvas("Example Invoice.pdf", pagesize=A4)
+    document = canvas.Canvas("Invoice.pdf", pagesize=A4)
 
     document.setLineWidth(5)
     document.setStrokeColor(lightsalmon)
