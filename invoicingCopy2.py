@@ -16,8 +16,17 @@ x = A4[0]
 space = 14
 
 
-def export_PDF(list_of_items, full_name=None, adress_line=None,
-               city=None, country=None, zip_postal=None,
+def export_PDF(list_of_items,
+               full_name=None,
+               adress_line=None,
+               city=None,
+               country=None,
+               zip_postal=None,
+               full_name_client=None,
+               adress_line_client=None,
+               city_client=None,
+               country_client=None,
+               zip_postal_client=None,
                items_per_page=13):
     
     document = canvas.Canvas("Example Invoice.pdf", pagesize=A4)
@@ -42,12 +51,12 @@ def export_PDF(list_of_items, full_name=None, adress_line=None,
 
     document.drawString(50, y - space * 7, "Invoice to:")
     document.setFont("Helvetica-Bold", 16)
-    document.drawString(50, y - space * 9, client_name)
+    document.drawString(50, y - space * 9, full_name_client)
     document.setFont("Helvetica", 11)
-    document.drawString(50, y - space * 10, client_adress_line_1)
-    document.drawString(50, y - space * 11, client_adress_line_2)
-    document.drawString(50, y - space * 12, client_adress_line_3)
-    document.drawString(50, y - space * 13, client_adress_line_4)
+    document.drawString(50, y - space * 10, adress_line_client)
+    document.drawString(50, y - space * 11, city_client)
+    document.drawString(50, y - space * 12, country_client)
+    document.drawString(50, y - space * 13, zip_postal_client)
 
     [i.insert(1, '') for i in list_of_items]
 
