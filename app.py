@@ -57,10 +57,10 @@ def download_file():
 
 
 def openurl():
-    # url = 'https://seb-invoicer.herokuapp.com/'
-    # print('opening URL')
-    # urllib2.urlopen(url)
-    # print('URL loaded')
+    url = 'https://seb-invoicer.herokuapp.com/'
+    print('opening URL')
+    urllib2.urlopen(url)
+    print('URL loaded')
     pass
 
 
